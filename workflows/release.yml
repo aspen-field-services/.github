@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Set environment variables
+      - name: Set release tag
         run: |
           echo "RELEASE_TAG=$(echo "${GITHUB_REF#refs/*/}" | sed 's/^v//' | xargs)" >> $GITHUB_ENV
       - name: Login to GitHub Container Registry
